@@ -31,7 +31,7 @@ class Youtube
 
     public function getYoutubeDlPath(): string
     {
-        return $this->youtubeDlPath ?? "/usr/bin/youtube-dl";
+        return $this->youtubeDlPath ?? "/usr/local/bin/youtube-dl";
     }
 
     public function getOutputPath(): string
