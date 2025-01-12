@@ -64,7 +64,7 @@ class Youtube
      *
      * @throws Exception
      */
-    public function download(?string $youtubeVideoUrl = null): string
+    public function download(?string $youtubeVideoUrl = null, bool $returnFilePath = true): string
     {
         $youtubeVideoUrl = $youtubeVideoUrl ?? $this->getVideoUrl();
 
@@ -103,13 +103,17 @@ class Youtube
          */
         if ($outputVariable === 0) {
 
-            if (is_file($fullPath)) {
-                return $fullPath;
-            } else {
+            if (!is_file($fullPath)) {
                 throw new Exception('Failed to download youtube video: '.$res_exec);
             }
         } else {
             throw new Exception('Failed to download youtube video: '.$res_exec);
+        }
+
+        if ($returnFilePath) {
+            return $this->getOutputPath() . $fileName;
+        } else {
+            return $fullPath;
         }
     }
 }
