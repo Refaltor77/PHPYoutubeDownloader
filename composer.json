@@ -1,0 +1,32 @@
+{
+    "name": "refaltor/youtube-downloader",
+    "description": "A PHP library for downloading YouTube videos and extracting metadata.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Refaltor\\YoutubeDownloader\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Elysio Martins",
+            "email": "elysiomartinspro@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.5",
+        "symfony/process": "^6.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "phpstan/phpstan": "^1.10"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse src"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
